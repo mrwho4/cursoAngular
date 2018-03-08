@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let sucursal of lista">
+    <app-sucursal 
+      (select)="clickSucursal($event)" 
+      [sucursal]="sucursal"
+      [selected] = "sucursalSeleccionada == s">
+    </app-sucursal>
+  </li>
+</ul>

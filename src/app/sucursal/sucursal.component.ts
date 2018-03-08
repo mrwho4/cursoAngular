@@ -9,17 +9,17 @@ import { Sucursal } from '../model/Sucursal';
 export class SucursalComponent implements OnInit {
 
   @Input() sucursal: Sucursal;
-  // @Output() select = new  EventEmitter();
-  @Output() select: EventEmitter<Sucursal> = new EventEmitter();
+  @Output() select = new EventEmitter<Sucursal>();
+  @Input() selected: boolean;
 
   constructor() { }
 
   ngOnInit() {
-
+    console.log(this.sucursal);
   }
 
   clickSucursal() {
-    this.select.emit(this.sucursal);
+    if (this.select) { this.select.emit(this.sucursal); }
   }
 
 }

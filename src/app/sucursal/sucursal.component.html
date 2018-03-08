@@ -1,5 +1,7 @@
-<article class="sucursal" >
-  <h2> {{sucursal.numero}} </h2>
-  <p> Sucursal: {{sucursal.direccion | lowercase}} </p>
-  <button (select)="clickSucursal()" >Elegir</button>
+<article  *ngIf="sucursal">
+  <h2 
+  
+  >{{ 'Sucursal ' + sucursal.numero }}</h2>
+  <p>{{ sucursal.direccion | uppercase }}</p>
+  <button (click)="clickSucursal()">Elegir</button>
 </article>

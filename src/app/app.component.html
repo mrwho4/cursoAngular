@@ -1,21 +1,9 @@
-<mat-sidenav-container fullscreen>
+<h1>Sucursales ICBC</h1>
 
-  <mat-sidenav-content>
-    <h1>Sucursales ICBC</h1>
+<nav>
+  
+    <a routerLink="/" routerLinkActive="active">Lista</a>
+    <a routerLink="/agregar" routerLinkActive="active">Agregar</a>
+</nav>
 
-    <app-filtro (change)="filtrar($event)"></app-filtro>
-
-    <ul>
-      <li *ngFor="let sucursal of resultadoBusqueda">
-        <app-sucursal (click)="clickSucursal($event)" [sucursal]="sucursal"></app-sucursal>
-      </li>
-      <button mat-button (click)="agregar()">Agregar</button>
-      
-
-    </ul>
-
-    <!-- <div>
-      <button (click)="toggleTheme()" mat-raised-button color="accent">Toggle theme</button>
-    </div> -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<router-outlet></router-outlet>
