@@ -1,3 +1,10 @@
-<section>
-  <input #search type="search" maxentries="10" (keyup)="onChange(search.value)">
-</section>
+<div class="container">
+  <section class="input-group-prepend">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Direccion</span>
+    </div>
+
+    <input #search type="search" class="form-control" aria-label="Direccion" aria-describedby="inputGroup-sizing-default" maxentries="10"
+      (keyup)="onChange(search.value)">
+  </section>
+</div>

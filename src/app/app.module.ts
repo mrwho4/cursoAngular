@@ -15,9 +15,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 
 const appRoutes: Routes = [
-  { path: '', component: ListaPageComponent },
+  { path: 'lista', component: ListaPageComponent},
+  { path: '', redirectTo: '/lista', pathMatch: 'full' },
   { path: 'agregar', component: AgregarPageComponent },
-  { path: '**', component: PageNotFoundComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
