@@ -1,14 +1,15 @@
-<p>{{sucursal | json}}</p>
+<div class="container">
+  <p>{{sucursal | json}}</p>
+  <form #formSucursal="ngForm" class="form-group">
+    <label for="numero">Numero</label>
+    <input [(ngModel)]="sucursal.numero" class="form-control" type="number" name="numero" id="numero">
 
-<form #formSucursal="ngForm"class="form-group" >
-  <label for="numero">Numero</label>
-   <input [(ngModel)]="sucursal.numero" class="form-control" type="number" name="numero" id="numero">
+    <label for="direccion">Dirección</label>
+    <input [(ngModel)]="sucursal.direccion" class="form-control" type="text" name="direccion" id="direccion">
 
-   <label for="direccion">Dirección</label>
-   <input [(ngModel)]="sucursal.direccion" class="form-control" type="text" name="direccion" id="direccion">
+    <label for="telefono">Teléfono</label>
+    <input [(ngModel)]="sucursal.telefono" class="form-control" type="tel" name="telefono" id="telefono">
 
-   <label for="telefono">Teléfono</label>
-   <input [(ngModel)]="sucursal.telefono" class="form-control" type="tel" name="telefono" id="telefono">
-
-   <button (click)="agregar()" >Agregar</button>
-</form>
+    <button (click)="agregar()">Agregar</button>
+  </form>
+</div>

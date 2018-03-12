@@ -15,7 +15,7 @@ export class SucursalComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.sucursal);
+    //console.log(this.sucursal);
   }
 
   clickSucursal() {

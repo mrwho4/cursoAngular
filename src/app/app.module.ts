@@ -11,6 +11,7 @@ import { DatosService } from './services/datos.service';
 import { AgregarPageComponent } from './agregar-page/agregar-page.component';
 import { ListaPageComponent } from './lista-page/lista-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { NavbarComponent } from './page-common/navbar/navbar.component';
 // import { ConversorComponent } from './conversor/conversor.component';
 
 
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     ListaSucursalesComponent,
     ListaPageComponent,
     AgregarPageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NavbarComponent
     // ConversorComponent
   ],
   imports: [

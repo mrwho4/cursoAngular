@@ -9,8 +9,9 @@ import { Sucursal } from '../model/Sucursal';
 export class ListaSucursalesComponent implements OnInit {
 
   @Input() lista: Sucursal[];
-  @Output() select = new EventEmitter<Sucursal>();
   sucursalSeleccionada: Sucursal;
+  
+  @Output() select = new EventEmitter<Sucursal>();
 
   constructor() { }
 
