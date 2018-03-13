@@ -8,23 +8,27 @@ import { DatosService } from '../services/datos.service';
   styleUrls: ['./lista-page.component.css']
 })
 export class ListaPageComponent implements OnInit {
-
+  sucursales: Sucursal[] = [];
   resultadoBusqueda: Sucursal[] = [];
 
   constructor(private datos: DatosService) {
-    this.resultadoBusqueda = this.datos.getSucursales();
+    // this.resultadoBusqueda = this.datos.getSucursales();
   }
 
   ngOnInit() {
+    this.datos.getSucursales().then(r => {
+      this.resultadoBusqueda = r;
+      this.sucursales = r;
+    });
   }
 
   filtrar(texto: string) {
     console.log(`filtrando: ${texto}`);
     if (texto.length === 0) {
-      this.resultadoBusqueda = this.datos.getSucursales();
+      this.resultadoBusqueda = this.sucursales;
     }
     this.resultadoBusqueda =
-      this.datos.getSucursales().filter(elemento => elemento.direccion.toLowerCase().indexOf(texto.toLowerCase()) >= 0);
+      this.sucursales.filter(elemento => elemento.direccion.toLowerCase().indexOf(texto.toLowerCase()) >= 0);
 
   }
 

@@ -13,6 +13,10 @@ import { ListaPageComponent } from './lista-page/lista-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NavbarComponent } from './page-common/navbar/navbar.component';
 // import { ConversorComponent } from './conversor/conversor.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 const appRoutes: Routes = [
@@ -37,7 +41,10 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ServiceWorkerModule.register('/ngsw-worker.js')
   ],
   providers: [DatosService],
   bootstrap: [AppComponent]
