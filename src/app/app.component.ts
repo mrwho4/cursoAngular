@@ -10,17 +10,18 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       opacity: 1,
       // transform : '0 0 white',
       // transform: 'scale(0.7)'
-      letterSpacing : '0'
+      letterSpacing: '0'
     })),
     state('invisible', style({
       opacity: 0,
       // transform: 'scale(0)'
-      letterSpacing : '100px'
+      letterSpacing: '100px'
     })),
     transition('* <=> *', animate('2s'))
   ])]
 })
 export class AppComponent {
+
 
   estado = 'visible';
 

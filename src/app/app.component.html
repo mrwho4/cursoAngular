@@ -23,8 +23,16 @@
 
     <router-outlet></router-outlet>
 
-    
+
 
 </div>
 
 <button (click)="toggleVisible()">Toggle</button>
+
+<input type="checkbox" name="rememberMe" [(ngModel)]="rememberMe">
+<p> {{rememberMe}} </p>
+<label>Click aqui</label>
+
+<div *ngIf="rememberMe">
+    <p>texto click</p>
+</div>
