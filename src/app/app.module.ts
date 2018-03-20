@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { DistancePipe } from './distance.pipe';
 
 
 const appRoutes: Routes = [
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
     ListaPageComponent,
     AgregarPageComponent,
     PageNotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
+    DistancePipe
     // ConversorComponent
   ],
   imports: [
@@ -44,7 +46,7 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ServiceWorkerModule.register('/ngsw-worker.js')
+    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [DatosService],
   bootstrap: [AppComponent]

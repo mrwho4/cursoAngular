@@ -1,0 +1,8 @@
+testing de unidad en angular
+ componentes 
+ servicios 
+ pipes
+ 
+ E2E Testing(End to end )
+ * testear como usuario, de forma automatica 
+ 

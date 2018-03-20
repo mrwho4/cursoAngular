@@ -3,5 +3,6 @@
   
   >{{ 'Sucursal ' + sucursal.numero }}</h2>
   <p>{{ sucursal.direccion | uppercase }}</p>
+  <p> {{sucursal.latitud}}, {{sucursal.longitud}} </p>
   <button class="btn btn-primary" (click)="clickSucursal()">Elegir</button>
 </article>
