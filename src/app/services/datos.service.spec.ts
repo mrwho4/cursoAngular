@@ -1,7 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { DatosService } from './datos.service';
-import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('DatosService', () => {

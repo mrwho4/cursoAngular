@@ -10,7 +10,6 @@ export class ListaSucursalesComponent implements OnInit {
 
   @Input() lista: Sucursal[];
   sucursalSeleccionada: Sucursal;
-  
   @Output() select = new EventEmitter<Sucursal>();
 
   constructor() { }

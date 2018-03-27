@@ -5,4 +5,13 @@ testing de unidad en angular
  
  E2E Testing(End to end )
  * testear como usuario, de forma automatica 
+ -> CI
  
+ BDD
+ desarrollo orientado comportamiento
+ test relacionados al negocio
+ 
+ ng e2e
+ 
+ tests de integracion continua
+ jenkins

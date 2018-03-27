@@ -1,5 +1,7 @@
 <app-filtro (change)="filtrar($event)"></app-filtro>
 
+<p>{{coordenada.latitude}} {{coordenada.longitude}}</p>
+
 <app-lista-sucursales 
     (select)="clickSucursal($event)" 
     [lista]="resultadoBusqueda">

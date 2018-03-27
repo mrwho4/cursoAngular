@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DistancePipe } from './distance.pipe';
+import { GeolocationService } from './geolocation.service';
 
 
 const appRoutes: Routes = [
@@ -48,7 +49,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})
   ],
-  providers: [DatosService],
+  providers: [DatosService, GeolocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
