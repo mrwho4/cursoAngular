@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Sucursal } from '../model/Sucursal';
 import { DatosService } from '../services/datos.service';
 import { GeolocationService } from '../geolocation.service';
+import { Store } from '@ngrx/store';
+import { AppStore, UserLocationStatesSlice } from '../reducers/reducers';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-lista-page',
@@ -12,22 +15,21 @@ export class ListaPageComponent implements OnInit {
   sucursales: Sucursal[] = [];
   resultadoBusqueda: Sucursal[] = [];
   coordenada: Coordinates;
+  userLocation$: Observable<UserLocationStatesSlice>;
 
   constructor(private datos: DatosService,
-    private geolocationService: GeolocationService
+    private store: Store<AppStore>
   ) {
     // this.resultadoBusqueda = this.datos.getSucursales();
+    this.userLocation$ = this.store.select('userLocation');
+
+    // this.store.select('userLocation')
   }
 
   ngOnInit() {
     this.datos.getSucursales().then(r => {
       this.resultadoBusqueda = r;
       this.sucursales = r;
-    });
-    this.geolocationService.getLocation()
-    .then( c => {
-      this.coordenada = c;
-      console.log(c);
     });
   }
 

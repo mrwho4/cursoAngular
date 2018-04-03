@@ -19,7 +19,11 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DistancePipe } from './distance.pipe';
 import { GeolocationService } from './geolocation.service';
+import { StoreModule } from "@ngrx/store";
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
+//reducers
+import { userLocation, sucursalSelected } from "./reducers/reducers";
 
 const appRoutes: Routes = [
   { path: 'lista', component: ListaPageComponent},
@@ -47,7 +51,12 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})
+    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
+    StoreModule.forRoot({userLocation, sucursalSelected}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production
+    })
   ],
   providers: [DatosService, GeolocationService],
   bootstrap: [AppComponent]

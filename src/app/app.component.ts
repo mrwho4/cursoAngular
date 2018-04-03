@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { GeolocationService } from './geolocation.service';
 
 @Component({
   selector: 'app-root',
@@ -20,8 +21,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     transition('* <=> *', animate('2s'))
   ])]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
+  ngOnInit(): void {
+    this.geo.start();
+  }
+  constructor(private geo: GeolocationService) {
+
+  }
 
   estado = 'visible';
 
@@ -30,3 +37,5 @@ export class AppComponent {
   }
 
 }
+// post message api
+// shared worker

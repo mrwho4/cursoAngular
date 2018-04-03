@@ -1,18 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppStore } from "./reducers/reducers";
+import { userLocated, userNotLocated } from './actions/actions';
 
 @Injectable()
 export class GeolocationService {
 
-  constructor() { }
+  constructor(private store: Store<AppStore>) { }
 
-  getLocation(): Promise<any> {
+  start() {
     return new Promise((resolve, reject) => {
       navigator.geolocation.watchPosition(
         position => {
-          resolve(position.coords);
+          // resolve(position.coords);
+          this.store.dispatch(userLocated(position.coords))
         },
         error => {
-          reject(error);
+          // reject(error);
+          this.store.dispatch(userNotLocated())
         }, {
           timeout: 10000,
           maximumAge: 60000,
