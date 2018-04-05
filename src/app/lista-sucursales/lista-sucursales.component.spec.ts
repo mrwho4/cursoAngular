@@ -11,10 +11,10 @@ describe('ListaSucursalesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListaSucursalesComponent, SucursalComponent ],
+      declarations: [ListaSucursalesComponent, SucursalComponent],
       imports: [HttpClientModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -33,6 +33,6 @@ describe('ListaSucursalesComponent', () => {
     fixture.detectChanges();
     const ne = fixture.nativeElement as HTMLElement;
 
-    expect (ne.querySelector('ul').children.length).toBe(2);
+    expect(ne.querySelector('ul').children.length).toBe(2);
   });
 });

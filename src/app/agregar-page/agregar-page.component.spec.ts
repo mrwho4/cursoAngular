@@ -12,14 +12,14 @@ describe('AgregarPageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule, HttpClientModule],
-      declarations: [ AgregarPageComponent ],
+      declarations: [AgregarPageComponent],
       providers: [DatosService]
       // providers: {
       //   provide: DatosService,
       //   useClass : DatosServiceMock
       // }
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   // let mock: Partial<DatosService> = {

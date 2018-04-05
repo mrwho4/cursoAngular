@@ -12,7 +12,7 @@ describe('SucursalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SucursalComponent ],
+      declarations: [SucursalComponent],
       providers: [{
         // utilizando mocks
         provide: GeolocationService, useValue: { // construyo un mock del servicio
@@ -22,7 +22,7 @@ describe('SucursalComponent', () => {
         }
       }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -40,9 +40,9 @@ describe('SucursalComponent', () => {
   });
 
   it('should distance', () => {
-    const nativeElement  = fixture.nativeElement as HTMLElement;
-    expect (nativeElement.querySelectorAll('p')[1].textContent)
-    .toBe('Distancia acá');
+    const nativeElement = fixture.nativeElement as HTMLElement;
+    expect(nativeElement.querySelectorAll('p')[1].textContent)
+      .toBe('Distancia acá');
 
     // const debugElement =  fixture.debugElement;
     // expect (debugElement.query(By.css('p:nth-child(2)'))).toBe(2);

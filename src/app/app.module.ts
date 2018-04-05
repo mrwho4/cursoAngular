@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SucursalComponent } from './sucursal/sucursal.component';
@@ -26,7 +26,7 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { userLocation, sucursalSelected } from "./reducers/reducers";
 
 const appRoutes: Routes = [
-  { path: 'lista', component: ListaPageComponent},
+  { path: 'lista', component: ListaPageComponent },
   { path: '', redirectTo: '/lista', pathMatch: 'full' },
   { path: 'agregar', component: AgregarPageComponent },
   { path: '**', component: PageNotFoundComponent }
@@ -51,8 +51,8 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
-    StoreModule.forRoot({userLocation, sucursalSelected}),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    StoreModule.forRoot({ userLocation, sucursalSelected }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production

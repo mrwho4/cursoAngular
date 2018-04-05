@@ -28,8 +28,8 @@ export class GeolocationService {
   }
 
 
-   // Converts numeric degrees to radians
-   toRad(Value) {
+  // Converts numeric degrees to radians
+  toRad(Value) {
     return Value * Math.PI / 180;
   }
 

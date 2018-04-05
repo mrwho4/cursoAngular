@@ -13,11 +13,11 @@ describe('ListaPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListaPageComponent, FiltroComponent, ListaSucursalesComponent, SucursalComponent ],
+      declarations: [ListaPageComponent, FiltroComponent, ListaSucursalesComponent, SucursalComponent],
       providers: [DatosService],
       imports: [HttpClientModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

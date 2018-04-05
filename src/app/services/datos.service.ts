@@ -45,7 +45,7 @@ export class DatosService {
 
   deleteSucursal(s: Sucursal) {
     const id = (s as any)._id;
-    this.http.delete(`${this.endpoint}/${id}`, id )
+    this.http.delete(`${this.endpoint}/${id}`, id)
       .subscribe(respuesta => {
 
       });

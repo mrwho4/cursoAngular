@@ -8,9 +8,9 @@ describe('FiltroComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FiltroComponent ]
+      declarations: [FiltroComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
