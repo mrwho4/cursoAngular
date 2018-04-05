@@ -37,6 +37,18 @@ export const sucursalSelected = (state: number = null, action: Action) => {
   return state;
 }
 
+  export const editForm = (state, action: Action) => {
+    switch (action.type) {
+      case 'EDIT_FORM_UPDATED':
+          //return {... action.payload}
+    
+      default:
+        return state;
+    }
+  }
+
+  // export const 
+
 // export const locationHistory = 
 // 	(state:Coordinates[] = [], action: Action) => {
 // 		switch (action.type) {

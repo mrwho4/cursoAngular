@@ -1,0 +1,19 @@
+<h1>
+  {{loading ? 'Cargando...' : 'Editanto:' + sucursal.numero }}
+</h1>
+<form [formGroup]="formEdition" (submit)="save()">
+  <label for="numero">Numero</label>
+  <input type="number" name="numero" formControlName="numero">
+  <p *ngIf="!formEdition.controls.numero.valid">Numero Invalido</p>
+
+  <label for="direccion">Dirección</label>
+  <input type="text" name="direccion" formControlName="direccion">
+  <p *ngIf="!formEdition.controls.direccion.valid && formEdition.controls.direccion.touched">Numero Invalido</p>
+
+  <label for="telefono">Teléfono</label>
+  <input type="tel" name="telefono" formControlName="telefono">
+  <p *ngIf="!formEdition.controls.telefono.validaDireccion">Dirección Invalida</p>
+  <!-- <p[hidden]="!formEdition.controls.direccion.errors"></p> -->
+
+  <button t1ype="submit">Actualizar</button>
+</form>

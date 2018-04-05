@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Sucursal } from '../model/Sucursal';
 import { GeolocationService } from '../geolocation.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sucursal',
@@ -14,7 +15,7 @@ export class SucursalComponent implements OnInit {
   @Input() selected: boolean;
   @Input() coords: any;
 
-  constructor(private geo: GeolocationService) { }
+  constructor(private geo: GeolocationService, private router: Router) { }
 
   distanciaActual() {
     return this.geo.distance(
@@ -31,6 +32,12 @@ export class SucursalComponent implements OnInit {
 
   clickSucursal() {
     if (this.select) { this.select.emit(this.sucursal); }
+  }
+
+  editar(){
+    this.router.navigate(
+      ['/sucursal', (this.sucursal as any)._id]
+    );
   }
 
 }

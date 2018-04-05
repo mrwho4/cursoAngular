@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// components
 import { AppComponent } from './app.component';
 import { SucursalComponent } from './sucursal/sucursal.component';
 import { FiltroComponent } from './filtro/filtro.component';
@@ -21,14 +22,17 @@ import { DistancePipe } from './distance.pipe';
 import { GeolocationService } from './geolocation.service';
 import { StoreModule } from "@ngrx/store";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { EditarPageComponent } from './editar-page/editar-page.component';
 
 //reducers
-import { userLocation, sucursalSelected } from "./reducers/reducers";
+import { userLocation, sucursalSelected, editForm } from "./reducers/reducers";
+
 
 const appRoutes: Routes = [
   { path: 'lista', component: ListaPageComponent },
   { path: '', redirectTo: '/lista', pathMatch: 'full' },
   { path: 'agregar', component: AgregarPageComponent },
+  { path: 'sucursal/:id', component: EditarPageComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -42,17 +46,18 @@ const appRoutes: Routes = [
     AgregarPageComponent,
     PageNotFoundComponent,
     NavbarComponent,
-    DistancePipe
-    // ConversorComponent
+    DistancePipe,
+    EditarPageComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    StoreModule.forRoot({ userLocation, sucursalSelected }),
+    StoreModule.forRoot({ userLocation, sucursalSelected, editForm }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production

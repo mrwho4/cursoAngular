@@ -1,5 +1,6 @@
 export class Sucursal {
 
+  public _id: string;
   public latitud: number;
   public longitud: number;
 

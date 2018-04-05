@@ -31,4 +31,18 @@ export const sucursalSelected = (i) => {
     type: 'SUCURSAL_SELECTED',
     payload: i
   }
+
+  export const editFormUpdated = (value) => {
+    return {
+      type: 'EDIT_FORM_UPDATED',
+      payload: value
+    }
+  }
+
+  export const saveEditForm = (value) => {
+    return {
+      type: 'SAVE_EDIT_FORM',
+      payload: value
+    }
+  }
 }

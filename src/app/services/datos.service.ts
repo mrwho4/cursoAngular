@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Sucursal } from '../model/Sucursal';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class DatosService {
@@ -26,6 +27,10 @@ export class DatosService {
           });
     });
 
+  }
+
+  getSucursal(id: string): Observable<Object> {
+    return this.http.get(`${this.endpoint}/${id}`);
   }
 
   /*    // this.http.get(´${this.endpoint}/´)
